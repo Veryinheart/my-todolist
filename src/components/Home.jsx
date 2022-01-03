@@ -10,6 +10,7 @@ const Home = () => {
     const [selectedMutlRow, setSelectedMutlRow] = useState([]);
     const { todoList, addToDo, deleteToDo, deleteMutlToDO } = useContext(ToDoListContext);
 
+    //table config
     const columns = [
         {
             title: 'Description',
@@ -28,7 +29,7 @@ const Home = () => {
             render: () => <Button type="link" style={{ color: 'red' }} onClick={() => deleteToDo(selectedItem)}>Delete</Button>,
         },
     ];
-
+    
     const onFinish = (values) => {
         const newTodo = { ...values, key: uuidv1() }
         addToDo(newTodo);
@@ -40,7 +41,7 @@ const Home = () => {
             selectedRows.length > 1 ? setSelectedMutlRow(selectedRows) : setSelectedItem(selectedRows[0]);
         },
     };
-
+    
     return (
 
         <div>

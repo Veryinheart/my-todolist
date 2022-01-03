@@ -6,10 +6,7 @@ import { Button } from "antd";
 const ToDoDetail = () => {
   const { todoList } = useContext(ToDoListContext);
   const params = useParams();
-  console.log(params);
-
   const todoItem = todoList.find((item) => (item.key === params.todoID));
-
 
   return (
     <>

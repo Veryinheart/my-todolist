@@ -20,6 +20,7 @@ const initialDefaultState = {
 
 export const ToDoListContextProvider = (props) => {
   const [state, dispatch] = useReducer(todoReducer, initialDefaultState);
+
   const addToDo = (todo) => {
     dispatch({
       type: ADD_TODO,
@@ -40,8 +41,6 @@ export const ToDoListContextProvider = (props) => {
       payload: todoIDArr,
     });
   };
-
-
 
   return (
     <ToDoListContext.Provider
